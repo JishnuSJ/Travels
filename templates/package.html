@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+{% block title%}
+Package
+{% endblock %}
+{% block content%} 
+<h1 class="text-center">Our Packageing Partners </h1>
+<hr>
+<div class="container text-center bg-info">
+{% for d in doctors%}
+{% comment %} <h2>{{d.doc_name}}</h2> {% endcomment %}
+
+<div class="card text-center mx-3 my-3" style="width: 18rem; display:inline-block">
+    <img src="{{d.doc_image.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{d.doc_name}}</h5>
+     
+     {% comment %} <h6>{{d.dep_name}} Department</h6> {% endcomment %}
+    </div>
+  </div>
+  
+{% endfor %}
+</div>
+{% endblock %}
